@@ -1,0 +1,88 @@
+<div class="text-layout">
+  <h1>Uncommon Pipes</h1>
+  <p>Angular uncommon pipes</p>
+</div>
+
+<div class="p-grid">
+
+  <div class="p-col p-md-6">
+    <p-fieldset legend="i18nSelectPipe"
+      [toggleable]="true">
+
+      ¡Hola {{selectedUser.name}}! {{selectedUser.gender | i18nSelect : welcomeMap | titlecase}}
+
+      <hr>
+      <p-selectButton [options]="users"
+        optionLabel="name"
+        [(ngModel)]="selectedUser">
+      </p-selectButton>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6">
+    <p-fieldset legend="i18nPluralPipe"
+      [toggleable]="true">
+
+      <div class="p-d-flex p-ai-baseline p-jc-center">
+
+        <button pButton
+          label="-"
+          (click)="accumulate(false)">
+        </button>
+
+        <span class="textContent"> {{alerts | i18nPlural : alertsMap}} </span>
+
+        <button pButton
+          label="+"
+          (click)="accumulate(true)">
+        </button>
+
+      </div>
+
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6">
+    <p-fieldset legend="Slice Pipe"
+      [toggleable]="true">
+
+      <b>Original</b>
+      <pre>{{selectedUser.name | slice:1:-1}}</pre>
+
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6">
+    <p-fieldset legend="KeyValue Pipe"
+      [toggleable]="true">
+
+      <ul>
+        <li *ngFor="let property of person | keyvalue">
+          <b>{{ property.key | titlecase }}: </b> {{property.value}}
+        </li>
+      </ul>
+
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6">
+    <p-fieldset legend="JSON Pipe"
+      [toggleable]="true">
+
+      <pre>{{users | json}}</pre>
+
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6">
+    <p-fieldset legend="ASYNC Pipe"
+      [toggleable]="true">
+
+      <pre>{{myObservable | async}}</pre>
+      <pre *ngIf="!(promiseValue | async)"> ** PENDING **</pre>
+      <pre>{{promiseValue | async}}</pre>
+
+    </p-fieldset>
+  </div>
+
+</div>
