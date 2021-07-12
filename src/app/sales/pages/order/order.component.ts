@@ -11,6 +11,7 @@ export class OrderComponent {
 
   upperFlag: boolean = true;
   orderBy: string = '';
+  
   heroes: Heroe[] = [
     {
       name: 'Superman',
@@ -45,8 +46,6 @@ export class OrderComponent {
 
   changeOrder(value: string) {
     this.orderBy = value;
-    console.log(value);
-
   }
 
 }

@@ -14,6 +14,7 @@ import { OrderComponent } from './pages/order/order.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { FliesPipe } from './pipes/flies.pipe';
 import { OrderPipe } from './pipes/order.pipe';
+import { ColorPipe } from './pipes/color.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OrderPipe } from './pipes/order.pipe';
     OrderComponent,
     CapitalizePipe,
     FliesPipe,
-    OrderPipe
+    OrderPipe,
+    ColorPipe
   ],
   imports: [
     CommonModule,
